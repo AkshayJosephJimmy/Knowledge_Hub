@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 function AuthLayout({title,onSubmit,children,buttonTitle,footLine,Authpage,path}) {
   return (
     <div className='bg-blue-300 h-dvh w-full'>
-        <div className='m-auto w-1/2 h-1/2 bg-blue-950 p-5  rounded-lg mt-20 flex items-center justify-center flex-col gap-2'>
+        <div className='m-auto w-1/2 h-1/2 bg-blue-950 p-5  rounded-lg mt-20 flex flex-col items-center justify-center gap-2'>
         <h1 className='text-white text-2xl'>{title}</h1>
         <form onSubmit={onSubmit} className='flex flex-col gap-2'>
      {children}
