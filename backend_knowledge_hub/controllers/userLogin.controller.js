@@ -1,5 +1,7 @@
 
 import userModel from "../models/users.model.js";
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
 
 export async function userLogin(req,res){
 
@@ -12,10 +14,11 @@ export async function userLogin(req,res){
             return res.status(404).json({message:"User not found"})
         }
  
-        else {
+        let token= jwt.sign({id:targetUser._id},"secretkey",{expiresIn:'1h'})
+            
            
-            return res.status(200).json({message:"User logged in successfully",user:targetUser})
-            }
+            return res.status(200).json({message:"User logged in successfully",user:targetUser,token:token})
+            
        
     
 
