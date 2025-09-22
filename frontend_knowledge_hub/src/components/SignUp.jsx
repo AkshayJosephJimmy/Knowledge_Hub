@@ -22,6 +22,7 @@ function SignUp() {
       console.log(res)
     })
     .catch((err)=>{
+      alert(err.response.data.message)
       console.log(err)
     })
   }
